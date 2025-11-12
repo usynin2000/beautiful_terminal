@@ -1,5 +1,7 @@
 # How to make your terminal beautiful
 
+A guide to setting up a modern, fast, and visually appealing terminal on macOS.
+
 
 | Terminal       | Speed | Setup              | Convenience        | Features                     |
 | -------------- | :---: | ------------------ | ------------------ | ---------------------------- |
@@ -8,35 +10,43 @@
 | Alacritty      |   🚀  | 🧱 Via YAML        | 😐 Minimalistic    | GPU-based, lightweight, fast |
 | Warp           |   ⚡️  | 🎨 Minimal setup   | 🤖 Very convenient | AI, blocks, modern UX        |
 
+> Tip: “Speed” is how fast the terminal feels in daily use. “Setup” indicates ease of installation and configuration. “Convenience” is about user-friendliness. “Features” lists key functionality.
+
+## Recommended Setup Order
+
+1. Install iTerm2
+
+2. Use Zsh as your shell
+
+3. Install Oh My Zsh framework
+
+4. Pick a theme
+
+5. Add useful plugins
 
 ## Install iTerm2
-1. Download iTerm2 from: https://iterm2.com/index.html
-2. Open iTerm2
+Download and install iTerm2 from https://iterm2.com. Open iTerm2 after installation.
+
 
 
 ## Using Zsh and Oh My Zsh
 
-> Zsh (Z Shell) — is a command-line shell.
+> Zsh (Z Shell) — a modern command-line shell alternative to bash.
 
-It’s an alternative to the standard bash that:
+It provides:
 
-- is more modern and convenient;
+- autocompletion, syntax highlighting, and flexible configuration
+- preinstalled on macOS (Catalina and later)
+- easier command history and scripting
 
-- supports autocompletion, syntax highlighting, flexible configuration, and plugins;
-
-- comes preinstalled on macOS (starting from Catalina).
-
-In simple terms, Zsh is what takes your commands and shows you the result.
-
-> Oh My Zsh — is a framework built on top of Zsh.
+> Oh My Zsh — a framework for managing Zsh configuration.
 
 It’s a configuration framework for Zsh that:
-- adds themes,
+- add themes,
 - includes plugins (for example, git, docker, pip, python, nvm, etc.),
 - makes it easier to manage your .zshrc file.
 
-Without Oh My Zsh, you’d have to manually define functions, aliases, colors, and so on.
-With Oh My Zsh, everything’s ready — you just pick what you need.
+Without Oh My Zsh, you would need to manually define aliases, functions, colors, and more. With Oh My Zsh, everything is ready to use — just pick what you need
 
 
 
@@ -50,7 +60,7 @@ With Oh My Zsh, everything’s ready — you just pick what you need.
 | Settings in one file (~/.zshrc)                   | 🔧 manual         | 👍 automated        |
 
 
-Download Oh My Zsh with this command:
+Install Oh My Zsh with this command:
 ```shell
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
@@ -71,21 +81,21 @@ ZSH_THEME="fletcherm" # your theme here
 
 Reload your terminal
 ```
-⌘ + T
+source ~/.zshrc
 ```
 
-You wiil have nice and clean theme that you have chosen.
+You will have nice and clean theme that you have chosen.
 
 
-> Do not forget to look at your terminal in IDE you use, some themes doesn't look good. My personal minimalistic choise is "fletcherm".
+> Note: Some themes may not render well in your IDE terminal. My personal minimalistic choice is "fletcherm".
 
 
 
-## Adding pluguins
+## Adding plugins
 
-Now when we have beutiful terminal we also could make it more smart.
+Now when we have beautiful terminal we also could make it more smart.
 
-We will add 3 most useful pluguins. 
+We will add 3 most useful plugins. 
 
 - zsh-autosuggestions
 - zsh-syntax-highlighting
@@ -112,11 +122,11 @@ zsh-autosuggestions installation:
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
-Add pluguin in .zshrc file to use it, then reload terminal:
+Add plugin in .zshrc file to use it, then reload terminal:
 ```shell
 # open ~/.zshrc
 plugins=(git zsh-autosuggestions)
-# ⌘ + T
+# source ~/.zshrc
 ```
 
 
@@ -137,11 +147,11 @@ zsh-syntax-highlighting installation:
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
-Add pluguin in .zshrc file to use it, then reload terminal:
+Add plugin in .zshrc file to use it, then reload terminal:
 ```shell
 # open ~/.zshrc
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
-# ⌘ + T
+source ~/.zshrc
 ```
 
 
@@ -162,5 +172,5 @@ z is already built into Oh My Zsh — just enable it.
 ```shell
 # open ~/.zshrc
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting z)
-# ⌘ + T
+# source ~/.zshrc
 ```
